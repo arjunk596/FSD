@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h3>My Simple List</h3>
+    
+    <input type="text" id="box" placeholder="Type something here...">
+    <br><br>
+    
+    <button onclick="addItem()">Add to List</button>
+    <button onclick="removeItem()">Remove from List</button>
+    <button onclick="searchItem()">Find in List</button>
+    <button onclick="showList()">Show All</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        let myList = [];
+
+        function addItem() {
+            let val = document.getElementById("box").value;
+            if (val !== "") {
+                myList.push(val); // .push() adds the item to the end
+            }
+        }
+
+        function removeItem() {
+            let val = document.getElementById("box").value;
+            let position = myList.indexOf(val); // Find where the item is
+            
+            if (position !== -1) {
+                myList.splice(position, 1); // .splice() cuts it out of the list
+            } else {
+                document.getElementById("result").innerHTML = "Item not found!";
+            }
+        }
+
+        function searchItem() {
+            let val = document.getElementById("box").value;
+            let position = myList.indexOf(val);
+            
+            if (position !== -1) {
+                // We add +1 because computers start counting at 0
+                document.getElementById("result").innerHTML = val + " is at spot #" + (position + 1);
+            } else {
+                document.getElementById("result").innerHTML = "Not in the list.";
+            }
+        }
+
+        function showList() {
+            document.getElementById("result").innerHTML = "Current List: " + myList.join(", ");
+        }
+    </script>
+
+</body>
+</html>

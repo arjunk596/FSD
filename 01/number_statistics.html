@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Statistics</title>
+</head>
+<body>
+    <h1>Number Statistics</h1>
+    <label>Enter your numbers <input type="text" id="input"></label><br><br>
+    <button onclick="max()">Maximum</button> <br><br>
+    <p id="max"></p> <br><br>
+    <button onclick="min()">Minimum</button> <br><br>
+    <p id="min"></p><br><br>
+    <button onclick="avg()">Average</button> <br><br>
+    <p id="avg"></p> <br><br>
+
+    <script>
+
+function getArray(){
+    let input = document.getElementById("input").value.trim();
+    let arr = input.split(" ").map(Number);
+    return arr;
+}
+
+function max(){
+    let arr = getArray();
+    arr.sort((a, b) => a - b);
+    let maximum = arr[arr.length - 1];
+
+    document.getElementById("max").textContent = maximum;
+    return maximum;
+}
+
+function min(){
+    let arr = getArray();
+    arr.sort((a, b) => a - b);
+    let minimum = arr[0];
+
+    document.getElementById("min").textContent = minimum;
+    return minimum;
+}
+
+function avg(){
+    let arr = getArray();
+    let total = 0;
+
+    for (let i = 0; i < arr.length; i++){
+        total += arr[i];
+    }
+
+    let average = total / arr.length;
+
+    document.getElementById("avg").textContent = average;
+    return average;
+}
+
+</script>
+</body>
+</html>

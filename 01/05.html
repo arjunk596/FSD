@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul>
+            <li>
+                <a href="#">Departments</a>
+                <ul id="dropdown">
+                    <li><a href="#">CE</a></li>
+                    <li><a href="#">Mech</a></li>
+                    <li><a href="#">ECS</a></li>
+                    <li><a href="#">CSE</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <style>
+        #navbar {
+            display: flex;
+            justify-content: center;
+            width: fit-content;
+            height: fit-content;
+            align-items: center;
+            background-color: #49a662;
+            color: #fff;
+            padding: 10px;
+
+        }
+
+        #dropdown {
+            display: none;
+            background-color: #49a662;
+            color: #fff;
+            padding: 10px;
+            /* hide dropdown */
+        }
+
+        #navbar:hover #dropdown {
+            display: inline-block;
+            position: absolute;
+            /* show dropdown */
+        }
+
+        #dropdown li:hover {
+            background-color: #555;
+        }
+    </style>
+</body>
+
+</html>

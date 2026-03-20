@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Student Table Generator</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Student Table
+        </h1>
+    </header>
+
+    <label>Enter Your Name <input type="text" id="name"></label> <br><br>
+    <label>Enter Your Age <input type="number" id="age"></label> <br><br>
+    <label>Enter Your Department <input type="text" id="dept"></label> <br><br>
+    <button onclick="addStudent()">Submit</button>
+
+    <table id="student-table">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+        </tr>
+    </table>
+
+    <script>
+        function addStudent(){
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let dept = document.getElementById("dept").value;
+            let table = document.getElementById("student-table");
+            let newRow = table.insertRow(-1);
+            newRow.insertCell(0).textContent = name;
+            newRow.insertCell(1).textContent = age;
+            newRow.insertCell(2).textContent = dept; 
+            document.getElementById("name").value = " ";
+            document.getElementById("age").value = " ";
+            document.getElementById("dept").value = " ";
+        }
+    </script>
+
+</body>
+</html>

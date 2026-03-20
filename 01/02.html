@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Notice Board</title>
+</head>
+
+<body>
+    <header>
+        <h1>Collge Notice Board</h1>
+    </header>
+    <main>
+        <div id="notice-container">
+            <section>
+                <ol id="notice-list">
+                    <li><span class="notice-box">Notice 1</span></li>
+                    <li><span class="notice-box" id="imp_notice">Notice 2</span></li>
+                    <li><span class="notice-box">Notice 3</span></li>
+                    <li><span class="notice-box">Notice 4</span></li>
+                    <li><span class="notice-box">Notice 5</span></li>
+                </ol>
+            </section>
+        </div>
+    </main>
+
+    <style>
+        #notice-container {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            color: rgb(0, 0, 0);
+        }
+
+
+        .notice-box {
+            display: block;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 6px 0;
+            background-color: #f9f9f9;
+            cursor: default;
+        }
+
+        .notice-box:hover {
+            color: rgb(53, 165, 36);
+            border-color: rgb(53, 165, 36);
+        }
+
+        #imp_notice {
+            color: rgb(255, 0, 0);
+            font-weight: bold;
+            border-color: red;
+            background-color: #fff0f0;
+        }
+    </style>
+</body>
+
+</html>

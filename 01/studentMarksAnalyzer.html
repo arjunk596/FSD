@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Analyzer</title>
+</head>
+<body>
+    <div id="marks-container">
+        <section>
+                <label>Subject Marks <input type="text" id="marks"></label><br><br>
+                <button onclick="calTotal()">Total Marks</button>
+                <p id="total-marks">Total Marks Are :- </p>
+                <button onclick="calPercent()">Percentage</button>
+                <p id="percentage">Percentage is :- </p>
+                <button onclick="assignGrade()">Grade</button>
+                <p id="grade">Assigned Grade</p>
+        </section>
+    </div>
+
+    <style>
+
+    </style>
+
+   <script>
+
+function getArray(){
+    let input = document.getElementById("marks").value;
+    return input.trim().split(" ").map(Number);
+}
+
+function calTotal(){
+    let arr = getArray();
+    let total = 0;
+
+    for(let i = 0; i < arr.length; i++){
+        total += arr[i];
+    }
+
+    document.getElementById("total-marks").textContent = total;
+    return total;
+}
+
+function calPercent(){
+    let total = calTotal();
+    let percent = (total / 500) * 100;
+
+    document.getElementById("percentage").textContent = percent.toFixed(2) + "%";
+    return percent;
+}
+
+function assignGrade(){
+    let percent = calPercent();
+    let grade = "";
+
+    if (percent >= 75){
+        grade = "Distinction";
+    } else if (percent >= 60){
+        grade = "First Class";
+    } else if (percent >= 50){
+        grade = "Second Class";
+    } else {
+        grade = "Fail";
+    }
+
+    document.getElementById("grade").textContent = grade;
+}
+
+</script>
+</body>
+</html>

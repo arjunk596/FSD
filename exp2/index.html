@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Contact Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 6px 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .contact {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Contact Form</h2>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="email" id="email" placeholder="Enter Email">
+    <input type="number" id="phone" placeholder="Enter Phone">
+    <button onclick="addContact()">Add Contact</button>
+
+    <h3>Contact List</h3>
+    <div id="contactList"></div>
+
+    <script>
+
+        let contacts = [];
+        let editIndex = -1;
+
+        // Load data from localStorage when page loads
+        window.onload = function () {
+            let storedContacts = localStorage.getItem("contacts");
+            if (storedContacts) {
+                contacts = JSON.parse(storedContacts);
+                displayContacts();
+            }
+        };
+
+        function addContact() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+
+            // Validation
+            if (name == "" || email == "" || phone == "") {
+                alert("All fields are required!");
+                return;
+            }
+
+            let contact = {
+                name: name,
+                email: email,
+                phone: phone
+            };
+
+            if (editIndex === -1) {
+                contacts.push(contact);
+            } else {
+                contacts[editIndex] = contact;
+                editIndex = -1;
+            }
+
+            localStorage.setItem("contacts", JSON.stringify(contacts));
+
+            clearFields();
+            displayContacts();
+        }
+
+        function displayContacts() {
+
+            let list = document.getElementById("contactList");
+            list.innerHTML = "";
+
+            for (let i = 0; i < contacts.length; i++) {
+
+                list.innerHTML += `
+        <div class="contact">
+            <p><b>Name:</b> ${contacts[i].name}</p>
+            <p><b>Email:</b> ${contacts[i].email}</p>
+            <p><b>Phone:</b> ${contacts[i].phone}</p>
+            <button onclick="editContact(${i})">Edit</button>
+            <button onclick="deleteContact(${i})">Delete</button>
+        </div>
+        `;
+            }
+        }
+
+        function deleteContact(index) {
+            contacts.splice(index, 1);
+            localStorage.setItem("contacts", JSON.stringify(contacts));
+            displayContacts();
+        }
+
+        function editContact(index) {
+
+            document.getElementById("name").value = contacts[index].name;
+            document.getElementById("email").value = contacts[index].email;
+            document.getElementById("phone").value = contacts[index].phone;
+
+            editIndex = index;
+        }
+
+        function clearFields() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>

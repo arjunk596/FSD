@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <label>Enter your Name<input type="text" id="name"></label><br><br>
+    <label>Enter your Email<input type="email" id="email"></label><br><br>
+    <label>Enter your password<input type="password" id="password"></label><br><br>
+    <button onclick="check()">Register</button>
+    <p id="output"></p>
+
+    <script>
+function check(){
+
+    let check_flag = true;
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email");
+    let password = document.getElementById("password").value.trim();
+
+    if(name === ""){
+        check_flag = false;
+    } 
+    else if(!email.checkValidity()){
+        check_flag = false;
+    } 
+    else if(password.length < 6){
+        check_flag = false;
+    }
+
+    if(check_flag === true){
+        document.getElementById("output").innerHTML = "Successful Registration";
+    } else {
+        document.getElementById("output").innerHTML = "Check your inputs again!!";
+    }
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+}
+</script>
+</body>
+</html>

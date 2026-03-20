@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+
+<body>
+    <header>
+        <h1>Login Form</h1>
+    </header>
+    <main>
+        <div id="login-container">
+            <section>
+                <form action="">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <style>
+        #login-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            background-color: #f9f9f9;
+            width: fit-content;
+            height: fit-content;
+            text-align: center;
+        }
+
+        #login-container form :focus {
+            outline: none;
+        }
+    </style>
+</body>
+
+</html>

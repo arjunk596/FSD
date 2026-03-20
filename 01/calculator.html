@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <label>Enter First No. <input type="number" id="first-no"></label>
+    <label>Enter Second No. <input type="number" id="second-no"></label>
+    <p id="output"></p>
+    <button onclick="add()" id="add">Add</button>
+    <button onclick="sub()" id="sub">Subract</button>
+    <button onclick="mul()" id="mul">Multiply</button>
+    <button onclick="div()" id="div">Division</button>
+
+    <script>
+        function add(){
+            let num1 = parseInt(document.getElementById("first-no").value);
+            let num2 = parseInt(document.getElementById("second-no").value);
+            let result = num1 + num2;
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function sub(){
+            let num1 = parseInt(document.getElementById("first-no").value);
+            let num2 = parseInt(document.getElementById("second-no").value);
+            let result = num1 - num2;
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function mul(){
+            let num1 = parseInt(document.getElementById("first-no").value);
+            let num2 = parseInt(document.getElementById("second-no").value);
+            let result = num1 * num2;
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function div(){
+            let num1 = parseInt(document.getElementById("first-no").value);
+            let num2 = parseInt(document.getElementById("second-no").value);
+            
+            if(num2 !== 0){
+                // Changed + to / for division logic
+                let result = num1 / num2; 
+                document.getElementById("output").innerHTML = result;
+            } else {
+                document.getElementById("output").innerHTML = "Cannot divide by zero";
+            }
+        }
+    </script>
+</body>
+</html>
