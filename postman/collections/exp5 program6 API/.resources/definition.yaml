@@ -1,0 +1,5 @@
+$kind: collection
+name: 'exp5 program6 API'
+variables:
+  - key: baseUrl
+    value: 'http://localhost:3000'

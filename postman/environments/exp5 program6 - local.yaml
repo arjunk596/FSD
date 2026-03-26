@@ -1,0 +1,6 @@
+name: 'exp5 program6 - local'
+values:
+  - key: baseUrl
+    value: 'http://localhost:3000'
+    enabled: true
+    type: default
