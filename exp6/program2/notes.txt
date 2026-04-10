@@ -1,0 +1,28 @@
+API Authentication
+API Authentication is the process of verifying the identity of a user or application before
+allowing access to an API.
+It ensures that only authorized users can use the API services.
+
+Authentication vs Authorization
+ Authentication → Verifies who you are
+ Authorization → Determines what you are allowed to access
+
+Levels (Tiers) of API Security
+APIs use different levels of security, including:
+1. No Authentication – Public APIs
+2. API Key – Unique key to access API
+3. Basic Authentication – Username and password
+4. OAuth / Advanced Authentication – Secure token-based access
+
+Basic Authentication
+In Basic Authentication:
+ Username and password are encoded using Base64
+ Sent in the request header
+
+API Key Authentication
+ A unique API key is provided by the API provider
+ Sent in request headers or URL
+
+Pagination
+Pagination is used to limit the amount of data returned in a single request by dividing
+results into pages.

@@ -1,0 +1,15 @@
+$kind: http-request
+name: New Request
+url: https://secrets-api.appbrewery.com/filter
+method: GET
+body:
+  type: urlencoded
+  content:
+    username: ArjunK
+    password: Arjun596
+auth:
+  type: basic
+  credentials:
+    username: ArjunK
+    password: Arjun596
+order: 4497274309295288

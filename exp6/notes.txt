@@ -1,0 +1,100 @@
+An API (Application Programming Interface) is a set of rules that allows different
+software systems to communicate over a network (typically the internet). It acts as an
+interface between two programs, enabling them to exchange data using standard protocols
+like HTTP/HTTPS.
+
+Types of API Requests
+ GET Request → Used to retrieve data (e.g., weather information)
+ POST Request → Used to send data (e.g., subscribing to a newsletter using
+Mailchimp)
+
+After a request, the server returns a response containing data and a status code.
+
+REST Api uses the HTTP protocols like get, put, post, delete
+
+We can explore an API's documentation using Postman
+Just put the api link in the GET request in Postman
+
+An API request consists of a Base URL, Endpoint, and Parameters.
+A client (your server) sends a request to another server through a public API to retrieve or
+send data.
+
+API Endpoints
+An endpoint is a specific path that provides access to a resource.
+Structure:
+BaseURL/Endpoint
+Examples:
+/random
+/filter
+So a complete request becomes: https://bored-api.appbrewery.com/random
+
+wihtout the endpoint it gives the complete content in HTML 
+
+A random endpoint is designed to return a single item (or a small set of items) chosen unpredictably from a larger collection.
+{
+    "activity": "Start a book you've never gotten around to reading",
+    "availability": 0.1,
+    "type": "relaxation",
+    "participants": 1,
+    "price": 0.1,
+    "accessibility": "Few to no challenges",
+    "duration": "minutes",
+    "kidFriendly": true,
+    "link": "",
+    "key": "7114122"
+}
+
+A filter is usually a set of instructions added to an existing endpoint to narrow down a large list of data based on specific criteria.
+Field: What you are looking at (e.g., status, price).
+Operator: The logic used (e.g., "equals", "greater than", "contains").
+Value: The specific criteria (e.g., "active", "100"). 
+this is like the select query is sql.
+
+JSON (JavaScript Object Notation) is a lightweight data format used to store and transfer
+data over networks. It is commonly used in APIs to send and receive data between servers
+and applications.
+
+Although JSON looks similar to a JavaScript object, there are key differences:
+ In JSON, all keys must be strings (enclosed in double quotes)
+ JSON is a text-based data format.
+ In JavaScript objects, keys may be written without quotes if they are valid identifiers,
+whereas in JSON all keys must be enclosed in double quotes.
+
+JSON example :-
+{
+&quot;name&quot;: &quot;John&quot;,
+&quot;age&quot;: 21
+}
+
+JSON Visualizer
+JSON data can be viewed and formatted using tools like:
+https://jsonviewer.stack.hu/
+This helps in reading and understanding complex JSON data.
+
+JSON Object to String - use .stringify()
+JSON String to Object - use .parse()
+
+Axios is a popular HTTP client library used to make API requests from a Node.js server.
+It allows the server to communicate with external APIs and fetch or send data.
+
+npm install axios
+
+Making a Request
+Axios can be used to send requests such as GET and POST.
+
+import axios from "axios";
+
+//Funciton Definition 
+async function fetchData() {
+const response = await axios.get("https://api.example.com/data");
+console.log(response.data);
+}
+
+//Funciton Call
+fetchData();
+
+How It Works
+ The server sends a request using Axios
+ The external API processes the request
+ The API returns a response (usually JSON)
+ Axios provides the data in response.data

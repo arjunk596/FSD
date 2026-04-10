@@ -1,0 +1,5 @@
+$kind: http-request
+name: New Request
+url: https://bored-api.appbrewery.com/filter
+method: GET
+order: 4109947141876835

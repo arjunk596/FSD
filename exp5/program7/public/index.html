@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Band Name Generator</title>
-    <style>
-        body { font-family: Arial; max-width: 500px; margin: 50px auto; }
-        input { width: 100%; padding: 8px; margin: 10px 0; }
-        button { background: green; color: white; padding: 10px; }
-    </style>
 </head>
 <body>
-    <h1>🎸 Band Name Generator</h1>
+    <h1>Band Name Generator</h1>
     <form action="/submit" method="POST">
-        <label>Street Name:</label>
+        <label for="street">Street Name:</label>
         <input type="text" name="street" required>
-        
-        <label>Pet Name:</label>
+        <br><br>
+        <label for="pet">Pet Name:</label>
         <input type="text" name="pet" required>
-        
-        <button type="submit">Generate Band Name</button>
+        <br><br>
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>
